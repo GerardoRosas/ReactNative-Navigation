@@ -21,10 +21,21 @@ const App = () => {
           <Stack.Screen
             name="Inicio"
             component={Inicio}
+            options={{
+              title: "Componente Principal",
+              headerStyle:{
+                backgroundColor: '#F4511E'
+              },
+              headerTintColor: '#FFF'
+            }}
           />
-          <Stack.Screen
+         <Stack.Screen
             name="Nosotros"
             component={Nosotros}
+            //Podemos pasar informacion del componete principal hacia los demas 
+            options={({route}) => ({
+              title: route.params.totalPagar
+            }) }
           />
         </Stack.Navigator>
       </NavigationContainer>
